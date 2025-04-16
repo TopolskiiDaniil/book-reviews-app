@@ -13,7 +13,8 @@ export default class MyDocument extends Document {
     ctx.renderPage = () =>
       originalRenderPage({
         enhanceApp: (App: AppType) => (props) =>
-          <App emotionCache={cache} {...props} />,
+					//убран emotionCache={cache} , вернуть когда начну использовать emotion
+          <App {...props} />,
       })
 
     const initialProps = await Document.getInitialProps(ctx)
